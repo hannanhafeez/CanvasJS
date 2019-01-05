@@ -11,16 +11,31 @@ var c = canvas.getContext('2d');
 
 
 function drawShapes() {
-	c.clearRect(0,0,canvas.width,canvas.height);
-	for (let i = 0; i <= 100 * Math.random(); i++) {
-		const x = canvas.width * Math.random();
-		const y = canvas.height * Math.random();
+	c.clearRect(0, 0, canvas.width, canvas.height);
+	for (let i = 0; i <= (100 * Math.random()) + 50; i++) {
+		let x = canvas.width * Math.random();
+		let y = (canvas.height * Math.random());
 		const w = 10;
 		const h = w;
 
+		if (x > canvas.width - 10) {
+			x -= 10;
+		}
+		
+		if (y >canvas.height - 10) {
+			y -= 10;
+		}
+		if (x < w) {
+			x += 10;
+		}
+
+		if (y < w) {
+			y += 10;
+		}
+
 		c.beginPath();
 		c.fillStyle = `rgb(${255*Math.random()},${255*Math.random()},${255*Math.random()})`;
-		c.arc(x,y,w,0,2*Math.PI);
+		c.arc(x, y, w, 0, 2 * Math.PI);
 		c.fill();
 		// c.stroke();
 		// c.fillRect(x, y, w, h);
