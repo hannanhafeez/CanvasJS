@@ -24,7 +24,6 @@ function animate() {
 	c.strokeStyle = 'blue';
 	c.stroke();
 	// if(x>innerWidth) x = 0;		//To loop from left to right
-
 	if (x > canvas.width - radius || x < radius) {
 		dx *= (-1);
 	} //To bounce off the edges
